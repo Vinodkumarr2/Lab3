@@ -1,0 +1,52 @@
+package Lab3;
+
+import java.util.HashSet;
+
+public class Tree {
+    Node root;
+    
+    public Tree(Node root) {
+        this.root = root;
+    }
+    
+    public static void isSum(int sum,Node root) {
+        Hashset<Integer> set = new HashSet<>();
+        isSum(set, root, sum);
+    }
+    
+    public static boolean isSum(HashSet set, Node root, int sum){
+        if(root == null){
+                return false;
+        }
+        if(isSum(set, root.left,sum)) {
+                return true;
+        }
+        if(set.contain(sum-root.data)) {
+                system.out.println("pair is there between "+ root.data+" and "+(sum-root.data));
+        return true;
+        }else{
+            set.add(root.data);
+        }
+        public static void main(string[] args) {
+            Node root = new node(value: 10);
+            Tree binaryTree = new Tree(root);
+            binaryTree.root.left = new Node(value: 20);
+            binaryTree.root.right = new Node(value:30);
+            root.left.left=new Node(value:40);
+            root.left.right=new Node(value:50);
+            root.right.left=new Node(value:60);
+            root.right.right=new Node(value:70);
+            isSum(sum: 130, root);
+        }
+    }
+    class Node{
+        int data;
+        Node left,right;
+        
+        Node(int value) {
+            data = value;
+            left = right = null;
+        }
+    }
+            
+  
